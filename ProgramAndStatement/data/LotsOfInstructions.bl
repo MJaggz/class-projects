@@ -1,0 +1,41 @@
+PROGRAM LotsOfInstructions IS 
+
+  INSTRUCTION Explore IS 
+    WHILE next-is-empty DO 
+      IF random THEN  
+        move 
+      ELSE  
+        IF random THEN  
+          turnleft 
+        ELSE  
+          turnright 
+        END IF 
+      END IF 
+    END WHILE 
+  END Explore 
+  
+  INSTRUCTION Patrol IS 
+    WHILE next-is-friend DO 
+      IF random THEN  
+        turnleft 
+      ELSE  
+        move 
+      END IF 
+    END WHILE 
+  END Patrol 
+  
+  INSTRUCTION Attack IS 
+    IF next-is-enemy THEN 
+      infect 
+    ELSE  
+      turnleft 
+    END IF 
+  END Attack 
+  
+  BEGIN 
+    WHILE true DO 
+      Explore
+      Patrol
+      Attack
+    END WHILE 
+  END LotsOfInstructions

@@ -1,0 +1,30 @@
+PROGRAM FormattingIssue IS 
+
+   INSTRUCTION   RandomMove IS  
+      WHILE     next-is-empty    DO 
+  IF     random THEN   
+      move   
+ ELSE   
+  IF     random THEN    
+    turnleft   
+    ELSE   
+ turnright   
+       END    IF 
+   END     IF 
+       END WHILE 
+  END   RandomMove 
+
+ BEGIN 
+  WHILE   true    DO 
+RandomMove 
+     IF    next-is-enemy THEN 
+ infect 
+ ELSE  
+     IF   random THEN  
+ turnleft 
+   ELSE   
+  turnright 
+END     IF 
+    END    IF 
+   END     WHILE 
+    END   FormattingIssue
