@@ -1,0 +1,38 @@
+WHILE true DO
+    IF next-is-enemy THEN
+        infect
+        turnleft
+        move
+        turnright
+        move
+        turnleft
+        turnright
+    ELSE
+        IF next-is-wall THEN
+            turnright
+            move
+            turnleft
+            move
+            move
+            turnleft
+        ELSE
+            IF next-is-friend THEN
+                turnleft
+                turnleft
+                move
+                turnright
+                move
+                turnleft
+            ELSE
+                IF next-is-empty THEN
+                    move
+                    turnright
+                    move
+                    turnleft
+                    turnleft
+                    move
+                END IF
+            END IF
+        END IF
+    END IF
+END WHILE
